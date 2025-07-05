@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://job-application-tracker-zk04.onrender.com/api",
+  baseURL: "https://job-application-tracker-1-9tqp.onrender.com/api",
 });
 
 export const addJob = (jobData) => API.post("/jobs", jobData);
