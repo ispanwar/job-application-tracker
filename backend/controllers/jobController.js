@@ -1,5 +1,3 @@
-const Job = require("../models/Job");
-
 const addJob = async (req, res) => {
   try {
     const { company, role, status, date, notes, emailRemainder } = req.body;
@@ -12,7 +10,7 @@ const addJob = async (req, res) => {
       emailRemainder,
     });
     const savedJob = await newJob.save();
-    return res.send(201).json(savedJob);
+    return res.status(201).json(savedJob);
   } catch (error) {
     console.error(error.message);
     return res.status(500).json({ error: "Server Error" });
@@ -41,6 +39,7 @@ const deleteJob = async (req, res) => {
     return res.status(500).json({ error: "Server Error: " + error.message });
   }
 };
+
 const updateJob = async (req, res) => {
   try {
     const updatedJob = await Job.findByIdAndUpdate(req.params.id, req.body, {
@@ -50,10 +49,11 @@ const updateJob = async (req, res) => {
     if (!updatedJob) {
       return res.status(404).json({ error: "Job not found" });
     }
-    return res.send(200).json(updatedJob);
+    return res.status(200).json(updatedJob);
   } catch (error) {
     console.log("Error in updating: ", error.message);
-    return res.send(500).json({ error: "Server Error: " + error.message });
+    return res.status(500).json({ error: "Server Error: " + error.message });
   }
 };
+
 module.exports = { addJob, getAllJobs, deleteJob, updateJob };
