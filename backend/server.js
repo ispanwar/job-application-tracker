@@ -7,6 +7,7 @@ require("dotenv").config();
 
 const app = express();
 const allowedOrigins = [
+  "*",
   "http://localhost:5173", // React dev server
   "https://job-application-tracker-jb2f.vercel.app", // your deployed frontend URL
 ];
