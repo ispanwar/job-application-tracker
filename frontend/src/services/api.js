@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const API = axios.create({ baseURL: "http://localhost:5000/api" });
+const API = axios.create({
+  baseURL: "https://job-application-tracker-zk04.onrender.com/api",
+});
 
 export const addJob = (jobData) => API.post("/jobs", jobData);
 export const fetchJobs = () => API.get("/jobs");
