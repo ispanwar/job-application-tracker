@@ -6,7 +6,25 @@ const jobroutes = require("./routes/jobRoutes");
 require("dotenv").config();
 
 const app = express();
-app.use(cors());
+const allowedOrigins = [
+  "http://localhost:5173", // React dev server
+  "https://job-application-tracker-jb2f.vercel.app", // your deployed frontend URL
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin) return callback(null, true); // allow REST tools or server-to-server requests
+      if (allowedOrigins.indexOf(origin) === -1) {
+        const msg = `The CORS policy for this site does not allow access from the specified Origin.`;
+        return callback(new Error(msg), false);
+      }
+      return callback(null, true);
+    },
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 
 connectToDb();
