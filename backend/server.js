@@ -10,6 +10,7 @@ const allowedOrigins = [
   "*",
   "http://localhost:5173", // React dev server
   "https://job-application-tracker-jb2f.vercel.app", // your deployed frontend URL
+  "https://job-application-tracker-vert-delta.vercel.app/",
 ];
 
 app.use(
