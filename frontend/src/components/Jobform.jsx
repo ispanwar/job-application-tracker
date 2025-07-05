@@ -37,7 +37,7 @@ export default function Jobform() {
     <>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col space-y-3 border rounded-md shadow-md bg-white p-4"
+        className="flex flex-col space-y-3 border rounded-md shadow-md bg-white p-4 max-w-lg mx-auto"
       >
         <input
           type="text"
