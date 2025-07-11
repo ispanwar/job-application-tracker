@@ -1,3 +1,4 @@
+const Job = require("../models/Job");
 const addJob = async (req, res) => {
   try {
     const { company, role, status, date, notes, emailRemainder } = req.body;
