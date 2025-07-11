@@ -48,7 +48,7 @@ export default function Jobcard({ job, onEdit, onDelete }) {
         <p className="text-base font-medium">{job.role}</p>
         <p className="text-sm text-gray-700">
           Applied On:{" "}
-          {new Date("2023-10-04").toLocaleDateString("en-US", {
+          {new Date(job.date).toLocaleDateString("en-US", {
             year: "numeric",
             month: "short",
             day: "numeric",
