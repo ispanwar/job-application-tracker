@@ -8,9 +8,10 @@ require("dotenv").config();
 const app = express();
 
 const allowedOrigins = [
-  "http://localhost:5173", // React dev server
-  "https://job-application-tracker-jb2f.vercel.app", // deployed frontend 1
-  "https://job-application-tracker-vert-delta.vercel.app", // deployed frontend 2 (add all frontend URLs you use)
+  "http://localhost:5173",
+  "https://job-application-tracker-jb2f.vercel.app",
+  "https://job-application-tracker-vert-delta.vercel.app",
+  "https://job-application-tracker-m6r4.vercel.app", // <-- Add this line
 ];
 
 // Log incoming origins for debugging
